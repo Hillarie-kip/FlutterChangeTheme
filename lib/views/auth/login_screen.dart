@@ -16,7 +16,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   //Theme Data
-  ThemeData themeData;
+  ThemeData  themeData;
   CustomAppTheme customAppTheme;
 
   //Text-Field Controller

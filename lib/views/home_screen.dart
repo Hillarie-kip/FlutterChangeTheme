@@ -1,6 +1,9 @@
 import 'package:boilerplate_ui/app_theme.dart';
 import 'package:boilerplate_ui/app_theme_notifier.dart';
+import 'package:boilerplate_ui/common/constants.dart';
+import 'package:boilerplate_ui/common/nm.dart';
 import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/utils/dashBoard.dart';
 import 'package:boilerplate_ui/views/loading_screens.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -131,12 +134,74 @@ class _HomeScreenState extends State<HomeScreen> {
               _userProfile(),
               _sliderBanner(),
               _categoriesWidget(),
+               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  for (final data in dash2)
+                    cardView(data.name, data.desc, data.assetImage,
+                        data.position, data.color)
+                ],
+              ),
               _newsWidget(),
             ],
           ));
     }
   }
 
+  Widget cardView(String name, String desc, AssetImage assetImage, int position,
+      Color color) {
+    return Expanded(
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        color: customAppTheme.bgLayer1,
+        elevation: 10.0,
+        shadowColor: AppColors.gray.withOpacity(0.5),
+        margin: new EdgeInsets.all(7.0),
+        child: InkWell(
+          splashColor: color,
+          highlightColor: AppColors.colorAccent,
+          onTap: () {
+
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Center(
+              child: Column(
+                //  crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                verticalDirection: VerticalDirection.down,
+
+                children: <Widget>[
+                  Container(
+                    decoration: nMBoxCircle,
+                    child: CircleAvatar(
+                      radius: 47,
+                      backgroundColor: color,
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: assetImage,
+                        backgroundColor: color,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Text(name,
+                    style: AppTheme.getTextStyle(themeData.textTheme.subtitle1,
+                        fontWeight: 600, letterSpacing: 0),),
+                  SizedBox(height: 10.0),
+                  Text(desc,
+                    style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                        fontWeight: 600, letterSpacing: 0),),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
   _userProfile() {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Column(

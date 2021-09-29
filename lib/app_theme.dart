@@ -425,7 +425,7 @@ class AppTheme {
   }
 
   static final CustomAppTheme lightCustomAppTheme = CustomAppTheme(
-      bgLayer1: Color(0xffffffff),
+      bgLayer1: Color(0xFFF2F2FF),
       bgLayer2: Color(0xfff9f9f9),
       bgLayer3: Color(0xffe8ecf4),
       bgLayer4: Color(0xffdcdee3),
@@ -489,7 +489,7 @@ class CustomAppTheme {
 
 
   CustomAppTheme({
-    this.bgLayer1 = const Color(0xffffffff),
+    this.bgLayer1 = const Color(0xFFF2F2FF),
     this.bgLayer2 = const Color(0xfff8faff),
     this.bgLayer3 = const Color(0xffeef2fa),
     this.bgLayer4 = const Color(0xffdcdee3),

@@ -175,14 +175,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 children: <Widget>[
                   Container(
-                    decoration: nMBoxCircle,
+                    decoration:  BoxDecoration(shape: BoxShape.circle, color: mC, boxShadow: [
+                      BoxShadow(
+                        color: themeData.colorScheme.primary.withAlpha(20),
+                        offset: Offset(10, 10),
+                        blurRadius: 10,
+                      ),
+                      BoxShadow(
+                        color: themeData.colorScheme.primary.withAlpha(20),
+                        offset: Offset(-10, -10),
+                        blurRadius: 10,
+                      ),
+                    ]),
                     child: CircleAvatar(
                       radius: 47,
-                      backgroundColor: color,
+                      backgroundColor: themeData.colorScheme.primary.withAlpha(20),
                       child: CircleAvatar(
                         radius: 40,
                         backgroundImage: assetImage,
-                        backgroundColor: color,
+                        backgroundColor: customAppTheme.bgLayer2.withOpacity(0.6),
                       ),
                     ),
                   ),

@@ -1,13 +1,16 @@
 import 'package:boilerplate_ui/app_theme.dart';
 import 'package:boilerplate_ui/app_theme_notifier.dart';
+import 'package:boilerplate_ui/common/constants.dart';
 import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/views/bottom/settings/setting_screen.dart';
 import 'package:boilerplate_ui/views/home_screen.dart';
-import 'package:boilerplate_ui/views/setting_screen.dart';
 import 'package:boilerplate_ui/views/auth/register_screen.dart';
 import 'package:boilerplate_ui/views/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
+
+
 
 class AppScreen extends StatefulWidget {
   final int selectedPage;
@@ -57,7 +60,18 @@ class _AppScreenState extends State<AppScreen>
           theme: AppTheme.getThemeFromThemeMode(value.themeMode()),
           home: Scaffold(
             backgroundColor: customAppTheme.bgLayer1,
-            bottomNavigationBar: BottomAppBar(
+            bottomNavigationBar:
+
+
+
+
+
+
+
+
+
+
+            BottomAppBar(
                 elevation: 0,
                 shape: CircularNotchedRectangle(),
                 child: Container(
@@ -80,25 +94,36 @@ class _AppScreenState extends State<AppScreen>
                     tabs: <Widget>[
                       Container(
                         child: (_currentIndex == 0)
-                            ? Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Icon(
-                                    MdiIcons.home,
-                                    color: themeData.colorScheme.primary,
-                                  ),
-                                  Container(
-                                    margin: Spacing.top(4),
-                                    decoration: BoxDecoration(
-                                        color: themeData.colorScheme.primary,
-                                        borderRadius: new BorderRadius.all(
-                                            Radius.circular(2.5))),
-                                    height: 5,
-                                    width: 10,
-                                  )
-                                ],
-                              )
+                            ? Container(
+                          width: MySize.size100,
+                           decoration: BoxDecoration(
+                            color: themeData.colorScheme.secondary,
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                              child:
+                                  Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Icon(
+                                          MdiIcons.home,
+                                          color: themeData.colorScheme.primary,
+                                        ),
+                                        Container(
+                                          margin: Spacing.top(4),
+                                          decoration: BoxDecoration(
+                                              color: themeData.colorScheme.primary,
+                                              borderRadius: new BorderRadius.all(
+                                                  Radius.circular(2.5))),
+                                          height: 5,
+                                          width: 10,
+                                        )
+                                      ],
+                                    ),
+
+
+                            )
                             : Icon(
                                 MdiIcons.home,
                                 color: themeData.colorScheme.onBackground,

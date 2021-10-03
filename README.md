@@ -1,1 +1,1 @@
-# Flutter UI Boilerplate
+# Flutter UI AppInApp

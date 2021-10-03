@@ -6,6 +6,7 @@ import 'package:boilerplate_ui/utils/SizeConfig.dart';
 import 'package:boilerplate_ui/utils/dashBoard.dart';
 import 'package:boilerplate_ui/views/loading_screens.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -37,10 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List nameCategoryList = [
-    'Galang Dana',
-    'Satu  Hutan ',
-    'Hutan Merdeka',
-    'Rawat Bumi',
+    'Taxi service',
+    'Food Delivery ',
+    'Alcohol Delivery',
+    'Grocery Shopping',
   ];
 
   List imgNews = [
@@ -106,10 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: MySize.size3,
                           child: isInProgress
                               ? LinearProgressIndicator(
-                                  minHeight: MySize.size3,
+                                  minHeight: MySize.size5,
                                 )
                               : Container(
-                                  height: MySize.size3,
+                                  height: MySize.size5,
                                 ),
                         ),
                         Expanded(
@@ -133,8 +134,89 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               _userProfile(),
               _sliderBanner(),
-              _categoriesWidget(),
-               Row(
+             /* Padding(
+                padding: const EdgeInsets.symmetric(horizontal:18.0),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  decoration: BoxDecoration(
+                      color: themeData.colorScheme.onPrimary,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextFormField(
+
+                    decoration: InputDecoration(
+                      fillColor: Colors.black.withOpacity(0.6),
+                      filled: true,
+                      border: new OutlineInputBorder(
+
+                        borderRadius:  BorderRadius.all(Radius.circular(20.0),),
+                        borderSide: new BorderSide(
+                          color: Colors.transparent,
+                          width: 11.0,
+                        ),
+                      ),
+
+                      labelText: "search here",
+                      labelStyle:AppTheme.getTextStyle(themeData.textTheme.caption,
+                        fontWeight: 600, letterSpacing: 0),
+
+                      suffixIcon: Icon(
+                        Icons.search,
+                        size: 28.0,
+                      ),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                    ),
+                  ),
+                ),
+              ),*/
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Ordering",style: AppTheme.getTextStyle(themeData.textTheme.subtitle1,
+                          color: themeData.colorScheme.primary, fontWeight: 700),
+                      ),  Text("More",style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                          color: themeData.colorScheme.primary, fontWeight: 700),
+                      ),
+                    ],
+                  ),
+                  _categoriesWidget(),
+                ],),
+              SizedBox(height: MySize.size30),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Ordering",style: AppTheme.getTextStyle(themeData.textTheme.subtitle1,
+                          color: themeData.colorScheme.primary, fontWeight: 700),
+                      ),  Text("More",style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                          color: themeData.colorScheme.primary, fontWeight: 700),
+                      ),
+                    ],
+                  ),
+                  _categoriesWidget(),
+                ],),
+              SizedBox(height:MySize.size30),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Ordering",style: AppTheme.getTextStyle(themeData.textTheme.subtitle1,
+                          color: themeData.colorScheme.primary, fontWeight: 700),
+                      ),  Text("More",style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                          color: themeData.colorScheme.primary, fontWeight: 700),
+                      ),
+                    ],
+                  ),
+                  _categoriesWidget(),
+                ],),
+
+              /*    Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   for (final data in dash2)
@@ -142,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         data.position, data.color)
                 ],
               ),
-              _newsWidget(),
+              _newsWidget(),*/
             ],
           ));
     }
@@ -223,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 themeData.textTheme.headline6,
               )),
           Text(
-            "Dimas Ibnu Malik",
+            "Hillarie Kalya",
             style: AppTheme.getTextStyle(themeData.textTheme.headline6,
                 color: themeData.colorScheme.primary, fontWeight: 700),
           ),

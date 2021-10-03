@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
-import '../app_theme.dart';
-import '../app_theme_notifier.dart';
-import 'about_app_dialog.dart';
+import '../../../app_theme.dart';
+import '../../../app_theme_notifier.dart';
+import '../../about_app_dialog.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -99,11 +99,11 @@ class _SettingScreenState extends State<SettingScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Dimas Ibnu Malik",
+                  Text("Hillarie Kalya",
                       style: AppTheme.getTextStyle(
                         themeData.textTheme.headline6,
                       )),
-                  Text("Flutter Developer",
+                  Text("Phone : 0720968729",
                       style: AppTheme.getTextStyle(
                         themeData.textTheme.caption,
                         fontWeight: 500,
